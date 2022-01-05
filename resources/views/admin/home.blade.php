@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in as an admin!') }}
+                    <a href="{{route('admin.customers.index')}}">View All customers</a>
                 </div>
             </div>
         </div>
