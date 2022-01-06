@@ -7,17 +7,17 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\User\CustomerController as UserCustomerController;
 use App\Http\Controllers\Admin\CustomerController as AdminCustomerController;
 
-/* use Illuminate\Support\Facades\Auth;
- *//*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+
+
+//Each link has a particular route
+
+//Find the route in Web.php
+
+//Web.php decides where to route
+
+//then goes to the controller
+
+//Controller then deceides which View / Page to load
 
 Route::get('/', function () {
     return view('welcome');
@@ -39,12 +39,15 @@ Route::get('user/customers/{id}', [UserCustomerController::class, 'show'])->name
 
 //Admin
 
-Route::get('admin/customers/', [AdminCustomerController::class, 'index'])->name('admin.customers.index');
-Route::get('admin/customers/{id}', [AdminCustomerController::class, 'show'])->name('admin.customers.show');
-Route::get('admin/customers/create', [AdminCustomerController::class, 'create'])->name('admin.customers.create');
-Route::post('admin/customers/store', [AdminCustomerController::class, 'store'])->name('admin.customers.store');
-Route::put('admin/customers/{id}', [AdminCustomerController::class, 'update'])->name('admin.customers.update');
-Route::delete('admin/customers/{id}', [AdminCustomerController::class, 'destroy'])->name('admin.customers.destroy');
+//Goes to the controller and calls a function
+Route::get('/admin/customers/create', [AdminCustomerController::class, 'create'])->name('admin.customers.create');
+
+Route::get('/admin/customers/', [AdminCustomerController::class, 'index'])->name('admin.customers.index');
+Route::get('/admin/customers/{id}', [AdminCustomerController::class, 'show'])->name('admin.customers.show');
+Route::get('/admin/customers/{id}/edit', [AdminCustomerController::class, 'edit'])->name('admin.customers.edit');
+Route::post('/admin/customers/store', [AdminCustomerController::class, 'store'])->name('admin.customers.store');
+Route::put('/admin/customers/{id}', [AdminCustomerController::class, 'update'])->name('admin.customers.update');
+Route::delete('/admin/customers/{id}', [AdminCustomerController::class, 'destroy'])->name('admin.customers.destroy');
 
 
 

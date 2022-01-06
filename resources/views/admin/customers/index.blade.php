@@ -5,8 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">customers</div>
-
+                <div class="card-header">
+                    Customers
+                    <a href="{{ route('admin.customers.create') }}" class="btn btn-primary float-right">Add</a>
+                  </div>
                 <div class="card-body">
                     @if (count($customers)===0)
                     <p>there are no Customers!</p>
@@ -28,9 +30,9 @@
                                     <td>{{$customer->phone }}</td>
                                     <td>{{$customer->image }}</td>
                                     <td>
-                                        <a href="{{ route('admin.customers.show', $customes->id) }}" class="btn btn-default">View</a>
+                                        <a href="{{ route('admin.customers.show', $customer->id) }}" class="btn btn-default">View</a>
                                         <a href="{{ route('admin.customers.edit', $customer->id) }}" class="btn btn-warning">Edit</a>
-                                        <form style="display:inline-block" method="POST" action="{{ route('admin.customers.destroy', $festival->id) }}">
+                                        <form style="display:inline-block" method="POST" action="{{ route('admin.customers.destroy', $customer->id) }}">
                                           <input type="hidden" name="_method" value="DELETE">
                                           <input type="hidden" name="_token"  value="{{ csrf_token() }}">
                                           <button type="submit" class="form-cotrol btn btn-danger">Delete</a>

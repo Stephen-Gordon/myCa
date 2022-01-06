@@ -1,3 +1,31 @@
+{{--
+
+    Once the edit button is clicked in index
+
+    Then gets routed to the Edit route in Web.php
+
+    Then routes you to Edit function In the Controller
+
+    Edit Function Loads edit.blade.php
+
+    The customer id gets passed through the function
+
+    The View and Form then gets populated with the customer's Id  data
+
+    The sumbit button goes to the update route. then goes to Web.php to find out where to go
+
+    The udate route goes to the update Function in the controller
+
+    the update function validates the data and saves it to the database
+
+    Once saved, index.php is then loaded again
+
+    Edit.php is loaded from the Controller
+    --}}
+
+
+
+
 @extends('layouts.app')
 
 @section ('content')
@@ -6,7 +34,7 @@
       <div class="col-md-8 col-md-offset-2">
         <div class="card">
           <div class="card-header">
-            Edit Festival
+            Edit customers
           </div>
           <div class="card-body">
           <!-- this block is ran if the validation code in the controller fails
@@ -20,44 +48,33 @@
                 </ul>
               </div>
             @endif
-            <form method="POST" action="{{ route('admin.festivals.update', $festival->id)}}">
+
+
+            <form method="POST" action="{{ route('admin.customers.update', $customer->id)}}">
               <input type="hidden" name="_token" value="{{  csrf_token()  }}">
               <input type="hidden" name="_method" value="PUT">
 
               <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ old('title', $festival->title) }}" />
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ old('title', $customer->name) }}" />
               </div>
               <div class="form-group">
-                <label for="description">Description</label>
-                <input type="text" class="form-control" id="description" name="description" value="{{ old('description', $festival->description) }}" />
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address" value="{{ old('address', $customer->address) }}" />
               </div>
               <div class="form-group">
-                <label for="location">Location</label>
-                <input type="text" class="form-control" id="location" name="location" value="{{ old('location', $festival->location) }}" />
+                <label for="email">Email</label>
+                <input type="text" class="form-control" id="email" name="email" value="{{ old('email', $customer->email) }}" />
               </div>
               <div class="form-group">
-                <label for="start_date">Start Date</label>
-                <input type="date" class="form-control" id="start_date" name="start_date" value="{{ old('start_date', $festival->start_date) }}" />
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone', $customer->phone) }}" />
               </div>
               <div class="form-group">
-                <label for="end_date">End Date</label>
-                <input type="date" class="form-control" id="end_date" name="end_date" value="{{ old('end_date', $festival->end_date) }}" />
+                <label for="image">Image</label>
+                <input type="text" class="form-control" id="image" name="image" value="{{ old('image', $customer->image) }}" />
               </div>
-              <div class="form-group">
-                <label for="contact_name">Contact Name</label>
-                <input type="text" class="form-control" id="contact_name" name="contact_name" value="{{ old('contact_name', $festival->contact_name) }}" />
-              </div>
-              <div class="form-group">
-                <label for="contact_email">Contact Email</label>
-                <input type="email" class="form-control" id="contact_email" name="contact_email" value="{{ old('contact_email', $festival->contact_email) }}" />
-              </div>
-              <div class="form-group">
-                <label for="contact_phone">Contact Phone</label>
-                <input type="text" class="form-control" id="contact_phone" name="contact_phone" value="{{ old('contact_phone', $festival->contact_phone) }}" />
-              </div>
-
-              <a href="{{ route('admin.festivals.index') }}" class="btn btn-outline">Cancel</a>
+              <a href="{{ route('admin.customers.index') }}" class="btn btn-outline">Cancel</a>
               <button type="submit" class="btn btn-primary float-right">Submit</button>
             </form>
           </div>
