@@ -17,7 +17,6 @@
                             <th>Address</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Image</th>
                         </thead>
                             <tbody>
                                 @foreach ($customers as $customer)
@@ -26,7 +25,6 @@
                                     <td>{{$customer->address }}</td>
                                     <td>{{$customer->email }}</td>
                                     <td>{{$customer->phone }}</td>
-                                    <td>{{$customer->image }}</td>
                                     <td>
                                         <a href="{{ route('user.customers.show', $customer->id) }}" class="btn btn-primary">View</a>
                                         </form>

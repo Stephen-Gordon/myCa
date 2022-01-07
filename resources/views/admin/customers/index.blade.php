@@ -19,7 +19,7 @@
                             <th>Address</th>
                             <th>Email</th>
                             <th>Phone</th>
-                            <th>Image</th>
+                          {{--   <th>Image</th> --}}
                         </thead>
                             <tbody>
                                 @foreach ($customers as $customer)
@@ -28,7 +28,7 @@
                                     <td>{{$customer->address }}</td>
                                     <td>{{$customer->email }}</td>
                                     <td>{{$customer->phone }}</td>
-                                    <td>{{$customer->image }}</td>
+                                   {{--  <td>{{$customer->image }}</td> --}}
                                     <td>
                                         <a href="{{ route('admin.customers.show', $customer->id) }}" class="btn btn-default">View</a>
                                         <a href="{{ route('admin.customers.edit', $customer->id) }}" class="btn btn-warning">Edit</a>

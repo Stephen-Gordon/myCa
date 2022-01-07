@@ -47,15 +47,15 @@ class CustomerController extends Controller
             'name' => 'required',
             'address' =>'required|max:500',
             'email' => 'required|email',
-            'phone' => 'required|min:6',
-            'customer_image' => 'file|image'
+            'phone' => 'required|min:6'
+            //'customer_image' => 'file|image'
         ]);
 
 
-        $customer_image = $request->file('customer_image');
-        $filename = $customer_image->hashName();
+       // $customer_image = $request->file('customer_image');
+        //$filename = $customer_image->hashName();
 
-        $path = $customer_image->storeAs('public/images', $filename);
+        //  $path = $customer_image->storeAs('public/images', $filename);
 
 
         // if validation passes create the new book
@@ -66,7 +66,7 @@ class CustomerController extends Controller
         $customer->address = $request->input('address');
         $customer->email = $request->input('email');
         $customer->phone = $request->input('phone');
-        $customer->image_location =  $filename;
+        //$customer->image_location =  $filename;
 
 
         //Puts them in the customer variable
@@ -128,7 +128,7 @@ class CustomerController extends Controller
         $customer->address = $request->input('address');
         $customer->email = $request->input('email');
         $customer->phone = $request->input('phone');
-        $customer->image = $request->input('image');
+        //$customer->image = $request->input('image');
         $customer->save();
 
 

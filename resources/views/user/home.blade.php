@@ -15,6 +15,7 @@
                     @endif
 
                     {{ __('You are logged in as an ordinary user!') }}
+                    <a href="{{route('user.customers.index')}}">View All customers</a>
                 </div>
             </div>
         </div>

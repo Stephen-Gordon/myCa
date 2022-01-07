@@ -28,10 +28,10 @@
                                     <td>Phone</td>
                                     <td>{{$customer->phone }}</td>
                                 </tr>
-                                <tr>
+                               {{--  <tr>
                                     <td>Image</td>
                                     <td>{{$customer->image }}</td>
-                                </tr>
+                                </tr> --}}
                             </tbody>
                         </table>
                         <a href="{{ route('user.customers.index') }}" class="btn btn-primary">Back</a>

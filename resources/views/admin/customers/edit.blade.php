@@ -70,10 +70,10 @@
                 <label for="phone">Phone</label>
                 <input type="text" class="form-control" id="phone" name="phone" value="{{ old('phone', $customer->phone) }}" />
               </div>
-              <div class="form-group">
+              {{-- <div class="form-group">
                 <label for="image">Image</label>
                 <input type="text" class="form-control" id="image" name="image" value="{{ old('image', $customer->image) }}" />
-              </div>
+              </div> --}}
               <a href="{{ route('admin.customers.index') }}" class="btn btn-outline">Cancel</a>
               <button type="submit" class="btn btn-primary float-right">Submit</button>
             </form>
