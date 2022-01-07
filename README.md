@@ -2,7 +2,7 @@
 
 Hi Anne,
 
-This is my Laravel application
+This is my Laravel application.
 
 I never got image functionallity to work. I made an attempt but had issues with the file upload.
 
